@@ -40,13 +40,13 @@ pipeline {
                         if ("$brench" == "master") {
                             writeFile file: 'deploy.properties', text: "image=$dockerTag"
                             archiveArtifacts 'deploy.properties'
-                            docker.withRegistry('https://us.gcr.io', 'gcr:future-force-248018') {
+                            docker.withRegistry('https://us.gcr.io', 'gcr:node-test') {
                                 docker.image("future-force-248018/node-test:$dockerTag").push("$dockerTag")
                             }
                         } else {
                             writeFile file: 'deploy.properties', text: "image=$dockerTag"
                             archiveArtifacts 'deploy.properties'
-                            docker.withRegistry('https://us.gcr.io', 'gcr:future-force-248018') {
+                            docker.withRegistry('https://us.gcr.io', 'gcr:node-test') {
                                 docker.image("future-force-248018/node-test:$dockerTag").push("$dockerTag")
                             }
                         }
