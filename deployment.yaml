@@ -63,7 +63,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName:  test-node-services
+              serviceName:  test-node-service
               servicePort: 80
 
   tls:
